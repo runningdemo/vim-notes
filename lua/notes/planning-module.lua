@@ -6,6 +6,7 @@ local function insertTodayTitle()
     if string.match(lineContent, todayString) then
       print ("The word tiger was found.")
     else
+      vim.api.nvim_command('exec "normal O"')
       vim.api.nvim_set_current_line(os.date("## %Y-%m-%d"))
     end
   end
